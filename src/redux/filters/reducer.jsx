@@ -4,8 +4,8 @@ import initialState from "./initialState";
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case COLORCHANGED:
-      const { color, changetype } = action.payload;
-      switch (changetype) {
+      const { color, changeType } = action.payload;
+      switch (changeType) {
         case "added":
           return {
             ...state,
@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
         case "removed":
           return {
             ...state,
-            colors: state.colors.filter((existing) => existing1 == color),
+            colors: state.colors.filter(existing => existing !== color),
           };
         default:
           return state;
