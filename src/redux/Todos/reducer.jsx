@@ -19,6 +19,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         {
           id: nextTodoId(state),
+          text: action.payload,
+          completed: false,
         },
       ];
 
@@ -57,8 +59,8 @@ const reducer = (state = initialState, action) => {
           completed: true,
         };
       });
-      default:
-        return state;
+    default:
+      return state;
   }
 };
 export default reducer;

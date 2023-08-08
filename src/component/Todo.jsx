@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import cancel from "../assets/images/cancel.png";
-import { toggeled,colorselected,deleted} from "../redux/Todos/actions";
+import { colorselected, deleted, toggeled } from "../redux/Todos/actions";
 
 export default function Todo({ todo }) {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ export default function Todo({ todo }) {
         )}
       </div>
 
-      <div className="select-none flex-1 line-through">{text}</div>
+      <div className={`select-none flex-1 ${completed && 'line-through'}`}>{text}</div>
 
       <div
         className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer border-green-500 hover:bg-green-500 ${
@@ -67,7 +67,7 @@ export default function Todo({ todo }) {
         src={cancel}
         className="flex-shrink-0 w-4 h-4 ml-2 cursor-pointer"
         alt="Cancel"
-        onClick={()=>handleDelete(id)}
+        onClick={() => handleDelete(id)}
       />
     </div>
   );
