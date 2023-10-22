@@ -15,7 +15,7 @@
     {
       "id": 3,
       "text": "Learn React JS",
-      "completed": false,
+      "completed": true,
       "color": "yellow"
     },
     {
